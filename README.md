@@ -1,3 +1,3 @@
 # genericconnectpuckgame
 
-this takes forever to buld in git pages
+this takes forever to build in git pages lol
