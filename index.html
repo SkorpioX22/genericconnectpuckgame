@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss & Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="protocol-warning" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; background: rgba(255,0,0,0.8); padding: 20px; z-index: 1000; border-radius: 10px;">
+        <h2>Local File Detected</h2>
+        <p>Three.js modules require a local server to run. Please run the game using a local server (e.g., npx serve, python -m http.server).</p>
+    </div>
+    <div id="ui">
+        <div id="hud">
+            <div id="stats">
+                <p>Discs: <span id="disc-count">8</span></p>
+                <p>Round: <span id="round-num">1</span></p>
+                <p>Wins In A Row: <span id="consecutive-wins">0</span></p>
+            </div>
+            <div id="instructions">
+                Flick/Swipe up to toss a disc!
+            </div>
+        </div>
+        <div id="overlay" class="hidden">
+            <div id="message-box">
+                <h1 id="status-message">Round Won!</h1>
+                <p id="sub-message">Connect 4 for one more round to win the game!</p>
+                <button id="next-btn">Next Round</button>
+            </div>
+        </div>
+    </div>
+    <div id="game-container"></div>
+    <script type="module" src="game.js"></script>
+</body>
+</html>
